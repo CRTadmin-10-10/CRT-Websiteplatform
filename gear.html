@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRT Gear & Loadouts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="crt.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div class="brand-text">
+            <div class="brand-title">CRT Command</div>
+            <div class="brand-sub">Central Response Taskforce</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Core systems</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="command.html">
+              <span class="icon">◎</span>
+              <span class="label">Command Center</span>
+              <span class="pill">Live</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teams.html">
+              <span class="icon">⚔</span>
+              <span class="label">Teams & Roster</span>
+              <span class="pill">Ops</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="missions.html">
+              <span class="icon">🎯</span>
+              <span class="label">Missions</span>
+              <span class="pill">Brief</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="gear.html">
+              <span class="icon">🧰</span>
+              <span class="label">Gear & Loadouts</span>
+              <span class="pill">Armory</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-section-label">Support</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="training.html">
+              <span class="icon">📚</span>
+              <span class="label">Training & Drills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comms.html">
+              <span class="icon">📡</span>
+              <span class="label">Comms & Signals</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logs.html">
+              <span class="icon">🧾</span>
+              <span class="label">Incident Log</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Armory online</span>
+          </div>
+          <div>Use this page to edit gear lists.</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="page-title">Gear & loadouts</div>
+          <div class="page-subtitle">
+            Track weapons, armor, medical, comms, and supplies. All lists are editable.
+          </div>
+        </div>
+        <div class="top-right">
+          <div class="badge">Mode: Armory</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- WEAPONS -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Weapons</div>
+              <div class="panel-meta">
+                <span class="pill">Edit list</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">Rifles</div>
+                    <div class="operator-role">List specific models here.</div>
+                  </div>
+                </li>
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">Sidearms</div>
+                    <div class="operator-role">List specific models here.</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="empty-state">
+                Edit this HTML directly to customize your armory.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ARMOR -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Armor</div>
+              <div class="panel-meta">
+                <span class="pill">Edit list</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">Plates / carriers</div>
+                    <div class="operator-role">Specify levels and counts.</div>
+                  </div>
+                </li>
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">Helmets</div>
+                    <div class="operator-role">Specify models and quantities.</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- MEDICAL & COMMS -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Medical & comms</div>
+              <div class="panel-meta">
+                <span class="pill">Support</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">IFAKs / trauma kits</div>
+                    <div class="operator-role">List contents or counts.</div>
+                  </div>
+                </li>
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">Radios / headsets</div>
+                    <div class="operator-role">Specify channels or models.</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOTES -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Supply notes</div>
+              <div class="panel-meta">
+                <span class="pill">Editable</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <textarea style="width:100%;min-height:140px;" placeholder="Use this area for resupply notes, shortages, or armory reminders."></textarea>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

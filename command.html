@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRT Command Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="crt.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div class="brand-text">
+            <div class="brand-title">CRT Command</div>
+            <div class="brand-sub">Central Response Taskforce</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Core systems</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link active" href="command.html">
+              <span class="icon">◎</span>
+              <span class="label">Command Center</span>
+              <span class="pill">Live</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teams.html">
+              <span class="icon">⚔</span>
+              <span class="label">Teams & Roster</span>
+              <span class="pill">Ops</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="missions.html">
+              <span class="icon">🎯</span>
+              <span class="label">Missions</span>
+              <span class="pill">Brief</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gear.html">
+              <span class="icon">🧰</span>
+              <span class="label">Gear & Loadouts</span>
+              <span class="pill">Armory</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-section-label">Support</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="training.html">
+              <span class="icon">📚</span>
+              <span class="label">Training & Drills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comms.html">
+              <span class="icon">📡</span>
+              <span class="label">Comms & Signals</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logs.html">
+              <span class="icon">🧾</span>
+              <span class="label">Incident Log</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Network secure · Tier‑1</span>
+          </div>
+          <div>Active operators: <strong id="cc-active-operators">0</strong></div>
+          <div>Teams: <strong>Alpha · Bravo</strong></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="page-title">Command center</div>
+          <div class="page-subtitle">
+            High‑level overview of CRT operations: teams, missions, gear, training, logs, and comms.
+          </div>
+        </div>
+        <div class="top-right">
+          <div class="badge">Mode: Operational</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Teams snapshot</div>
+              <div class="panel-meta">
+                <span class="pill">Roster</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="summary-grid">
+                <div class="summary-cell">
+                  <div class="summary-label">Total operators</div>
+                  <div class="summary-value" id="cc-total-ops">0</div>
+                </div>
+                <div class="summary-cell">
+                  <div class="summary-label">Alpha operators</div>
+                  <div class="summary-value" id="cc-alpha-ops">0</div>
+                </div>
+                <div class="summary-cell">
+                  <div class="summary-label">Bravo operators</div>
+                  <div class="summary-value" id="cc-bravo-ops">0</div>
+                </div>
+                <div class="summary-cell">
+                  <div class="summary-label">Teams at capacity</div>
+                  <div class="summary-value" id="cc-capacity">0 / 2</div>
+                </div>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:var(--text-muted);">
+                Edit rosters on the Teams page. This snapshot updates from local storage.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Mission status</div>
+              <div class="panel-meta">
+                <span class="pill">Missions</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="empty-state">
+                Mission board is editable on <strong>missions.html</strong>. Use that page to add and track missions.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Gear readiness</div>
+              <div class="panel-meta">
+                <span class="pill">Armory</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="empty-state">
+                Gear and loadouts are editable on <strong>gear.html</strong>. Use that page to manage inventory.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Training & logs</div>
+              <div class="panel-meta">
+                <span class="pill">Support</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="empty-state">
+                Training events are editable on <strong>training.html</strong> and incidents on <strong>logs.html</strong>.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "crt_teams_roster_v1";
+
+    function loadRoster() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return { alpha: [], bravo: [] };
+        const parsed = JSON.parse(raw);
+        return parsed.teams || { alpha: [], bravo: [] };
+      } catch {
+        return { alpha: [], bravo: [] };
+      }
+    }
+
+    const teams = loadRoster();
+    const alphaCount = teams.alpha.length;
+    const bravoCount = teams.bravo.length;
+    const total = alphaCount + bravoCount;
+
+    document.getElementById("cc-total-ops").textContent = total;
+    document.getElementById("cc-alpha-ops").textContent = alphaCount;
+    document.getElementById("cc-bravo-ops").textContent = bravoCount;
+    document.getElementById("cc-active-operators").textContent = total;
+
+    let capacity = 0;
+    if (alphaCount >= 4) capacity++;
+    if (bravoCount >= 4) capacity++;
+    document.getElementById("cc-capacity").textContent = capacity + " / 2";
+  </script>
+</body>
+</html>

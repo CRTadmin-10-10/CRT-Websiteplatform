@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRT Incident Log</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="crt.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div class="brand-text">
+            <div class="brand-title">CRT Command</div>
+            <div class="brand-sub">Central Response Taskforce</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Core systems</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="command.html">
+              <span class="icon">◎</span>
+              <span class="label">Command Center</span>
+              <span class="pill">Live</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teams.html">
+              <span class="icon">⚔</span>
+              <span class="label">Teams & Roster</span>
+              <span class="pill">Ops</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="missions.html">
+              <span class="icon">🎯</span>
+              <span class="label">Missions</span>
+              <span class="pill">Brief</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gear.html">
+              <span class="icon">🧰</span>
+              <span class="label">Gear & Loadouts</span>
+              <span class="pill">Armory</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-section-label">Support</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="training.html">
+              <span class="icon">📚</span>
+              <span class="label">Training & Drills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comms.html">
+              <span class="icon">📡</span>
+              <span class="label">Comms & Signals</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="logs.html">
+              <span class="icon">🧾</span>
+              <span class="label">Incident Log</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Logging enabled</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="page-title">Incident log</div>
+          <div class="page-subtitle">
+            Record incidents, observations, and operational notes. All entries are editable.
+          </div>
+        </div>
+        <div class="top-right">
+          <div class="badge">Mode: Logging</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- INCIDENT LIST -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Incident entries</div>
+              <div class="panel-meta">
+                <span class="pill">Editable</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Example incident</div>
+                    <div class="operator-role">[Edit] Add details, time, and notes.</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="empty-state">
+                Add or remove list items in this HTML to customize your incident log.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOTES -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">General notes</div>
+              <div class="panel-meta">
+                <span class="pill">Free‑form</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <textarea style="width:100%;min-height:140px;" placeholder="Use this area for general notes, summaries, or follow‑up actions."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRIORITY ITEMS -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Priority items</div>
+              <div class="panel-meta">
+                <span>Manual list</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <textarea style="width:100%;min-height:140px;" placeholder="List urgent items or follow‑ups here."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- ARCHIVE -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Archive</div>
+              <div class="panel-meta">
+                <span>Optional</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="empty-state">
+                You can create an archive section here later if you want long‑term storage.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

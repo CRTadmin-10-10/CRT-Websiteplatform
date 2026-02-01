@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRT Teams & Roster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="crt.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div class="brand-text">
+            <div class="brand-title">CRT Command</div>
+            <div class="brand-sub">Central Response Taskforce</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Core systems</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="command.html">
+              <span class="icon">◎</span>
+              <span class="label">Command Center</span>
+              <span class="pill">Live</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="teams.html">
+              <span class="icon">⚔</span>
+              <span class="label">Teams & Roster</span>
+              <span class="pill">Ops</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="missions.html">
+              <span class="icon">🎯</span>
+              <span class="label">Missions</span>
+              <span class="pill">Brief</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gear.html">
+              <span class="icon">🧰</span>
+              <span class="label">Gear & Loadouts</span>
+              <span class="pill">Armory</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-section-label">Support</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="training.html">
+              <span class="icon">📚</span>
+              <span class="label">Training & Drills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comms.html">
+              <span class="icon">📡</span>
+              <span class="label">Comms & Signals</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logs.html">
+              <span class="icon">🧾</span>
+              <span class="label">Incident Log</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Network secure · Tier‑1</span>
+          </div>
+          <div>Active operators: <strong id="active-operators-count">0</strong></div>
+          <div>Teams: <strong>Alpha · Bravo</strong></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="page-title">Teams & roster</div>
+          <div class="page-subtitle">
+            Manage CRT teams, operators, and readiness. Add, edit, or remove operators in real time.
+          </div>
+        </div>
+        <div class="top-right">
+          <div class="badge">Mode: Operational</div>
+          <button class="primary-btn" id="add-operator-global">
+            <span>＋</span>
+            <span>Add operator</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- ALPHA TEAM -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Alpha team · Direct action</div>
+              <div class="panel-meta">
+                <span class="pill">Team</span>
+                <span class="team-status" id="alpha-status">Ready</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="quick-actions" style="justify-content: space-between;">
+                <div class="pill">2–4 operators</div>
+                <button class="qa-btn" data-team="alpha">
+                  <span class="icon">＋</span>
+                  <span>Add operator</span>
+                </button>
+              </div>
+              <div class="roster-list" id="alpha-roster">
+                <div class="empty-state">No operators assigned yet. Use “Add operator” to populate Alpha Team.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BRAVO TEAM -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Bravo team · Rescue / extraction</div>
+              <div class="panel-meta">
+                <span class="pill">Team</span>
+                <span class="team-status" id="bravo-status">Ready</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="quick-actions" style="justify-content: space-between;">
+                <div class="pill">2–4 operators</div>
+                <button class="qa-btn" data-team="bravo">
+                  <span class="icon">＋</span>
+                  <span>Add operator</span>
+                </button>
+              </div>
+              <div class="roster-list" id="bravo-roster">
+                <div class="empty-state">No operators assigned yet. Use “Add operator” to populate Bravo Team.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Team summary</div>
+              <div class="panel-meta">
+                <span class="pill">Overview</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="summary-grid">
+                <div class="summary-cell">
+                  <div class="summary-label">Total operators</div>
+                  <div class="summary-value" id="summary-total">0</div>
+                </div>
+                <div class="summary-cell">
+                  <div class="summary-label">Alpha operators</div>
+                  <div class="summary-value" id="summary-alpha">0</div>
+                </div>
+                <div class="summary-cell">
+                  <div class="summary-label">Bravo operators</div>
+                  <div class="summary-value" id="summary-bravo">0</div>
+                </div>
+                <div class="summary-cell">
+                  <div class="summary-label">Teams at capacity</div>
+                  <div class="summary-value" id="summary-capacity">0 / 2</div>
+                </div>
+              </div>
+              <div style="margin-top:8px;font-size:11px;color:var(--text-muted);">
+                Teams are designed for 2–4 operators each. Use this page to keep rosters tight and ready.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- QUICK ACTIONS -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Roster actions</div>
+              <div class="panel-meta">
+                <span>High‑priority adjustments</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="quick-actions">
+                <button class="qa-btn" id="add-alpha-btn">
+                  <span class="icon">＋</span>
+                  <span>Add to Alpha</span>
+                </button>
+                <button class="qa-btn" id="add-bravo-btn">
+                  <span class="icon">＋</span>
+                  <span>Add to Bravo</span>
+                </button>
+                <button class="qa-btn" id="clear-alpha-btn">
+                  <span class="icon">✕</span>
+                  <span>Clear Alpha</span>
+                </button>
+                <button class="qa-btn" id="clear-bravo-btn">
+                  <span class="icon">✕</span>
+                  <span>Clear Bravo</span>
+                </button>
+                <button class="qa-btn" id="clear-all-btn">
+                  <span class="icon">⚠</span>
+                  <span>Clear all rosters</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal" id="operator-modal">
+      <div class="modal-close" id="modal-close">×</div>
+      <div class="modal-title">Add operator</div>
+      <div class="modal-sub" id="modal-team-label">Assigning to: Alpha Team</div>
+
+      <div class="modal-field">
+        <label for="operator-name-input">Operator name</label>
+        <input id="operator-name-input" type="text" placeholder="e.g. Reyes, Vega, Morales" />
+      </div>
+
+      <div class="modal-field">
+        <label for="operator-role-input">Role</label>
+        <input id="operator-role-input" type="text" placeholder="e.g. Team Lead, Medic, Breacher" />
+      </div>
+
+      <div class="modal-actions">
+        <button class="small-btn" id="modal-cancel">Cancel</button>
+        <button class="small-btn" id="modal-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="teams.js"></script>
+</body>
+</html>

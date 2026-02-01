@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRT Comms & Signals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="crt.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div class="brand-text">
+            <div class="brand-title">CRT Command</div>
+            <div class="brand-sub">Central Response Taskforce</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-label">Core systems</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="command.html">
+              <span class="icon">◎</span>
+              <span class="label">Command Center</span>
+              <span class="pill">Live</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teams.html">
+              <span class="icon">⚔</span>
+              <span class="label">Teams & Roster</span>
+              <span class="pill">Ops</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="missions.html">
+              <span class="icon">🎯</span>
+              <span class="label">Missions</span>
+              <span class="pill">Brief</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gear.html">
+              <span class="icon">🧰</span>
+              <span class="label">Gear & Loadouts</span>
+              <span class="pill">Armory</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-section-label">Support</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="training.html">
+              <span class="icon">📚</span>
+              <span class="label">Training & Drills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="comms.html">
+              <span class="icon">📡</span>
+              <span class="label">Comms & Signals</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logs.html">
+              <span class="icon">🧾</span>
+              <span class="label">Incident Log</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Comms online</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="page-title">Comms & signals</div>
+          <div class="page-subtitle">
+            Radio channels, call signs, and signal codes. All fields are editable.
+          </div>
+        </div>
+        <div class="top-right">
+          <div class="badge">Mode: Comms</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- RADIO CHANNELS -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Radio channels</div>
+              <div class="panel-meta">
+                <span class="pill">Primary</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Channel 1 — Command</div>
+                    <div class="operator-role">[Edit] Usage notes.</div>
+                  </div>
+                </li>
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Channel 2 — Team Ops</div>
+                    <div class="operator-role">[Edit] Usage notes.</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="empty-state">
+                Add or remove list items in this HTML to customize your comms plan.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CALL SIGNS -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Call signs</div>
+              <div class="panel-meta">
+                <span class="pill">Identifiers</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Alpha‑1</div>
+                    <div class="operator-role">[Edit] Team lead</div>
+                  </div>
+                </li>
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Bravo‑1</div>
+                    <div class="operator-role">[Edit] Team lead</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- SIGNAL CODES -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Signal codes</div>
+              <div class="panel-meta">
+                <span class="pill">Reference</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="roster-list">
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Code Red</div>
+                    <div class="operator-role">[Edit] High‑priority alert</div>
+                  </div>
+                </li>
+                <li class="operator-row">
+                  <div class="operator-main">
+                    <div class="operator-name">[Edit] Code Green</div>
+                    <div class="operator-role">[Edit] All clear</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOTES -->
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-header">
+              <div class="panel-title">Comms notes</div>
+              <div class="panel-meta">
+                <span class="pill">Free‑form</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <textarea style="width:100%;min-height:140px;" placeholder="Use this area for comms reminders, SOPs, or frequency changes."></textarea>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
