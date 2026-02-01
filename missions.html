@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="crt.css" />
 </head>
+
 <body>
   <div class="shell">
     <aside class="sidebar">
@@ -24,28 +25,19 @@
             <a class="nav-link" href="command.html">
               <span class="icon">◎</span>
               <span class="label">Command Center</span>
-              <span class="pill">Live</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="teams.html">
               <span class="icon">⚔</span>
               <span class="label">Teams & Roster</span>
-              <span class="pill">Ops</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="missions.html">
               <span class="icon">🎯</span>
               <span class="label">Missions</span>
-              <span class="pill">Brief</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gear.html">
-              <span class="icon">🧰</span>
-              <span class="label">Gear & Loadouts</span>
-              <span class="pill">Armory</span>
+              <span class="pill">Shared</span>
             </a>
           </li>
         </ul>
@@ -71,13 +63,6 @@
             </a>
           </li>
         </ul>
-
-        <div class="sidebar-footer">
-          <div class="status-chip">
-            <span class="status-dot"></span>
-            <span>Mission board online</span>
-          </div>
-        </div>
       </div>
     </aside>
 
@@ -85,82 +70,37 @@
       <div class="top-bar">
         <div class="top-left">
           <div class="page-title">Missions</div>
-          <div class="page-subtitle">
-            Create, track, and update CRT missions. All content here is editable.
-          </div>
-        </div>
-        <div class="top-right">
-          <div class="badge">Mode: Planning</div>
-          <button class="primary-btn" id="add-mission-btn">
-            <span>＋</span>
-            <span>New mission</span>
-          </button>
+          <div class="page-subtitle">Shared mission board — saved in the cloud.</div>
         </div>
       </div>
 
       <div class="grid">
+        <!-- Mission List -->
         <section class="panel">
           <div class="panel-inner">
             <div class="panel-header">
-              <div class="panel-title">Active missions</div>
-              <div class="panel-meta">
-                <span class="pill">Live</span>
-              </div>
+              <div class="panel-title">Active Missions</div>
+              <div class="panel-meta"><span class="pill">Shared</span></div>
             </div>
             <div class="panel-body">
-              <div class="roster-list" id="missions-active">
-                <div class="empty-state">
-                  No active missions. Use “New mission” to add one.
-                </div>
-              </div>
+              <ul id="mission-list" class="mission-list">
+                <!-- Filled by Supabase -->
+              </ul>
             </div>
           </div>
         </section>
 
+        <!-- Add Mission -->
         <section class="panel">
           <div class="panel-inner">
             <div class="panel-header">
-              <div class="panel-title">Planned / queued</div>
-              <div class="panel-meta">
-                <span class="pill">Queue</span>
-              </div>
+              <div class="panel-title">Add Mission</div>
             </div>
             <div class="panel-body">
-              <div class="roster-list" id="missions-queued">
-                <div class="empty-state">
-                  No queued missions. You can move missions here manually.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="panel-inner">
-            <div class="panel-header">
-              <div class="panel-title">Mission notes</div>
-              <div class="panel-meta">
-                <span class="pill">Editable</span>
-              </div>
-            </div>
-            <div class="panel-body">
-              <textarea style="width:100%;min-height:140px;" placeholder="Use this space for free‑form mission notes, SOPs, or reminders."></textarea>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="panel-inner">
-            <div class="panel-header">
-              <div class="panel-title">Quick actions</div>
-              <div class="panel-meta">
-                <span>Manual workflow</span>
-              </div>
-            </div>
-            <div class="panel-body">
-              <div class="empty-state">
-                Missions are temporary for now. Later, we can upgrade this page to use local storage like Teams.
-              </div>
+              <input id="missionTitle" placeholder="Mission Title" style="width:100%;margin-bottom:8px;">
+              <input id="missionStatus" placeholder="Status (Planned/Active/Complete)" style="width:100%;margin-bottom:8px;">
+              <textarea id="missionNotes" placeholder="Notes" style="width:100%;height:80px;margin-bottom:8px;"></textarea>
+              <button onclick="addMissionFromForm()">Add Mission</button>
             </div>
           </div>
         </section>
@@ -168,120 +108,17 @@
     </main>
   </div>
 
-  <!-- MISSION MODAL -->
-  <div class="modal-backdrop" id="mission-modal-backdrop">
-    <div class="modal">
-      <div class="modal-close" id="mission-modal-close">×</div>
-      <div class="modal-title">New mission</div>
-      <div class="modal-sub">Create a mission card for tracking.</div>
-
-      <div class="modal-field">
-        <label for="mission-title-input">Title</label>
-        <input id="mission-title-input" type="text" placeholder="e.g. Urban extraction, Zone 3" />
-      </div>
-
-      <div class="modal-field">
-        <label for="mission-status-input">Status</label>
-        <select id="mission-status-input">
-          <option value="active">Active</option>
-          <option value="queued">Queued</option>
-        </select>
-      </div>
-
-      <div class="modal-field">
-        <label for="mission-notes-input">Notes</label>
-        <textarea id="mission-notes-input" placeholder="Short mission description, objectives, or constraints."></textarea>
-      </div>
-
-      <div class="modal-actions">
-        <button class="small-btn" id="mission-modal-cancel">Cancel</button>
-        <button class="small-btn" id="mission-modal-save">Save</button>
-      </div>
-    </div>
-  </div>
-
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const missionBackdrop = document.getElementById("mission-modal-backdrop");
-    const missionClose = document.getElementById("mission-modal-close");
-    const missionCancel = document.getElementById("mission-modal-cancel");
-    const missionSave = document.getElementById("mission-modal-save");
-    const addMissionBtn = document.getElementById("add-mission-btn");
-
-    function openMissionModal() {
-      document.getElementById("mission-title-input").value = "";
-      document.getElementById("mission-notes-input").value = "";
-      document.getElementById("mission-status-input").value = "active";
-      missionBackdrop.style.display = "flex";
-    }
-
-    function closeMissionModal() {
-      missionBackdrop.style.display = "none";
-    }
-
-    function createMissionCard(title, notes) {
-      const card = document.createElement("div");
-      card.className = "operator-row";
-
-      const main = document.createElement("div");
-      main.className = "operator-main";
-
-      const t = document.createElement("div");
-      t.className = "operator-name";
-      t.textContent = title || "Untitled mission";
-
-      const n = document.createElement("div");
-      n.className = "operator-role";
-      n.textContent = notes || "No notes set.";
-
-      main.appendChild(t);
-      main.appendChild(n);
-
-      const actions = document.createElement("div");
-      actions.className = "operator-actions";
-
-      const remove = document.createElement("button");
-      remove.className = "small-btn danger";
-      remove.textContent = "Remove";
-      remove.addEventListener("click", () => card.remove());
-
-      actions.appendChild(remove);
-
-      card.appendChild(main);
-      card.appendChild(actions);
-
-      return card;
-    }
-
-    addMissionBtn.addEventListener("click", openMissionModal);
-    missionClose.addEventListener("click", closeMissionModal);
-    missionCancel.addEventListener("click", closeMissionModal);
-
-    missionBackdrop.addEventListener("click", (e) => {
-      if (e.target.id === "mission-modal-backdrop") closeMissionModal();
-    });
-
-    missionSave.addEventListener("click", () => {
-      const title = document.getElementById("mission-title-input").value.trim();
-      const notes = document.getElementById("mission-notes-input").value.trim();
-      const status = document.getElementById("mission-status-input").value;
-
-      if (!title) {
-        alert("Enter a mission title.");
-        return;
-      }
-
-      const card = createMissionCard(title, notes);
-      const targetList =
-        status === "queued"
-          ? document.getElementById("missions-queued")
-          : document.getElementById("missions-active");
-
-      const empty = targetList.querySelector(".empty-state");
-      if (empty) empty.remove();
-
-      targetList.appendChild(card);
-      closeMissionModal();
-    });
+    const supabase = supabase.createClient(
+      "https://jcfovnliultimdznhxdj.supabase.co",
+      "sb_publishable_ZcZjBQcODVr3iZ79obOwxQ_rDH25ngz"
+    );
   </script>
+
+  <!-- Shared mission logic -->
+  <script src="missions-shared.js"></script>
+
 </body>
 </html>
