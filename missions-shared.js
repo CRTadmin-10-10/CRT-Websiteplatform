@@ -1,6 +1,6 @@
 // Load missions from Supabase
 async function loadMissions() {
-  const { data, error } = await supabase
+  const { data, error } = await sb
     .from("missions")
     .select("*");
 
@@ -17,7 +17,7 @@ async function loadMissions() {
     li.innerHTML = `
       <strong>${m.title}</strong><br>
       Status: ${m.status}<br>
-      Notes: ${m.notes}
+      Notes: ${m.notes || ""}
     `;
     list.appendChild(li);
   });
@@ -34,7 +34,7 @@ async function addMissionFromForm() {
     return;
   }
 
-  const { error } = await supabase
+  const { error } = await sb
     .from("missions")
     .insert([{ title, status, notes }]);
 
